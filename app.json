@@ -1,8 +1,16 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/lesson/lesson",
     "pages/logs/logs"
   ],
+  "tabBar": {
+    "list": [
+      { "text": "共修", "pagePath": "pages/index/index"},
+      { "text": "功课", "pagePath": "pages/lesson/lesson"},
+      { "text": "我", "pagePath": "pages/logs/logs"}
+    ]
+  },
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#000",

@@ -7,9 +7,18 @@
       <view class="list_item_content">
         <view class="list_item_content_title">{{item.text}}</view>
         <view class="list_item_content_desc">{{item.desc}}</view>
+        <view class="list_item_content_form">
+          <image style="width: 25px; height: 25px;" src="../../imgs/icon-lotus.png"></image>
+          <view style="padding-left: 15rpx; padding-right: 15rpx;">报数</view>
+          <input style="padding-left: 15rpx" class="input" type="number" name="input"/>
+          <view style="padding-left: 15rpx; ">遍</view>
+        </view>
       </view>
       <view class="list_item_action">
       </view>
     </view>
+  </view>
+  <view class="section">
+    <textarea class="textarea" placeholder="placeholder颜色是红色的" placeholder-style="color:red;"  />
   </view>
 </view>

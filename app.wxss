@@ -1,10 +1,54 @@
 /**app.wxss**/
+.input {
+  border: 1px solid #e7f1fa;
+  background-color: #f1f8ff;
+}
+
+.textarea {
+  border: 1px solid #e7f1fa;
+  background-color: #f1f8ff;
+}
+
 .container {
   height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: space-between;
-  padding: 200rpx 0;
+  padding: 0 0;
   box-sizing: border-box;
 } 
+.list {
+  display: flex;
+  flex-direction: column;
+}
+.list_item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
+  padding: 10px;
+  border-top: 1px solid;
+}
+.list_item_img {
+  flex: 13%;
+  height: 60px;
+}
+.list_item_content {
+  display: flex;
+  flex-direction: column;
+  flex: 70%;
+  padding-left: 8px;
+}
+.list_item_content_title {
+  font-size: 16px;
+  font-weight: bold;
+}
+.list_item_content_desc {
+  padding-top: 6px;
+  font-size: 12px;
+  font-weight: lighter;
+}
+.list_item_action {
+  flex: 17%;
+  background-color: green;
+}
