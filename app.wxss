@@ -7,6 +7,7 @@
 .textarea {
   border: 1px solid #e7f1fa;
   background-color: #f1f8ff;
+  font-size: 12px;
 }
 
 .container {
@@ -17,6 +18,15 @@
   padding: 0 0;
   box-sizing: border-box;
 } 
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+}
 .list {
   display: flex;
   flex-direction: column;
