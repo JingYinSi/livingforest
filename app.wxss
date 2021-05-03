@@ -46,7 +46,7 @@
 .list_item_content {
   display: flex;
   flex-direction: column;
-  flex: 70%;
+  flex: 80%;
   padding-left: 8px;
 }
 .list_item_content_title {
@@ -59,6 +59,6 @@
   font-weight: lighter;
 }
 .list_item_action {
-  flex: 17%;
+  flex: 7%;
   background-color: green;
 }
