@@ -1,7 +1,5 @@
 {
-  "entryPagePath": "pages/apply/apply",
   "pages":[
-    "pages/apply/apply",
     "pages/index/index",
     "pages/lesson/lesson",
     "pages/logs/logs"

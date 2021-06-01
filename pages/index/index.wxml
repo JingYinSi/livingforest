@@ -1,15 +1,36 @@
 <!--index.wxml-->
 <view class="container">
-  <image style="width: 100%; height: 200px; background-color: #eeeeee;" src="{{banner}}"></image>
-  <view class="list" wx:for="{{list.items}}" wx:for-item="item" wx:key="item">
-    <view class="list_item">
-      <image class="list_item_img" mode="aspectFit" src="{{list.img}}"></image>
-      <view class="list_item_content">
-        <view class="list_item_content_title">{{item.text}}</view>
-        <view class="list_item_content_desc">{{item.desc}}</view>
-      </view>
-      <view class="list_item_action">
-      </view>
+  <view class="titleBar">
+    <view class="activatiesBar">
+    <view class="selectedActivaty">
+      <view class="selectedActivatyText">{{activaties.items[0].text}}</view>
+      <view class="selectedActivatyLine"></view>
+    </view>
+    <view class="activaty">
+      <view class="activatyText">{{activaties.items[1].text}}</view>
+      <view class="activatyLine"></view>
+    </view>
+    <view class="activaty">
+      <view class="activatyText">{{activaties.items[2].text}}</view>
+      <view class="activatyLine"></view>
+    </view>
+    </view>
+    <view class="allActivatiesButton">
+      <text class="allActivatiesButtonText">全部</text>
     </view>
   </view>
+  <view class="lessonsBar">
+    <view class="lessonBtn lessonBtnSelected"><text class="lessonBtnText lessonBtnTextSelected">莲师</text></view>
+    <view class="lessonBtn"><text class="lessonBtnText">文殊</text></view>
+    <view class="lessonBtn"><text class="lessonBtnText">马金</text></view>
+  </view>
+  <view class="mainArea">
+    <view class="mainAreaTitleBar">
+      <text>莲花生大士心咒</text>
+    </view>
+    <view class="mainAreaBody">
+      <image style="width: 318px; height: 38px;" src="{{upPic}}"></image>
+    </view>
+  </view>
+  
 </view>

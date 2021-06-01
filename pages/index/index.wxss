@@ -1,2 +1,116 @@
 
 
+.container {
+  background-color: #EBDFCB;
+  padding-left: 20pt;
+} 
+.titleBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 44pt;
+  padding-right: 75pt;
+}
+
+.activatiesBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+  height: 44pt;
+}
+.selectedActivaty {
+  display: flex;
+  flex-direction: column;
+  width: 60pt;
+  align-items: center;
+}
+.selectedActivatyText {
+  height: 26pt;
+  font-size: 24px;
+  text-align: center;
+}
+.selectedActivatyLine {
+  height: 2pt;
+  width: 30pt;
+  background: linear-gradient(to left, #FBA39F, #C72824);
+}
+
+.activaty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.activatyLine {
+  height: 2pt;
+  width: 28.5pt;
+}
+
+.activatyText {
+  font-size: 15px;
+  color: #545454;
+  text-align: center;
+}
+
+.allActivatiesButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52pt;
+  height: 24pt;
+  border-style: solid;
+  border-width: 1pt;
+  border-color: #AC936C;
+  border-radius: 11.5pt;
+}
+.allActivatiesButtonText {
+  width: 28.5pt;
+  font-size: 11pt;
+  text-align: center;
+  color: #AC936C;
+}
+
+.lessonsBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  height: 24pt;
+  margin-top: 19pt;
+}
+.lessonBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52pt;
+  height: 24pt;
+  background-color: #DABD95;
+  border-color: #AC936C;
+  border-radius: 11.5pt;
+  margin-right: 16pt;
+}
+.lessonBtnSelected {
+  box-shadow: 0 6px 6px 0 #D1B389FF, 0 6px 20px 0 #D1B389FF;
+}
+.lessonBtnText {
+  font-size: 11pt;
+  color: #AC936C;
+}
+.lessonBtnTextSelected {
+  color: black;
+}
+.mainArea {
+  display: flex;
+  flex-direction: row;
+}
+.mainAreaTitleBar {
+  display: flex;
+  flex-direction: column;
+  text-orientation: mixed;
+  writing-mode: vertical-rl;
+}
+.mainAreaBody {
+  display: flex;
+  flex-direction: column;
+}

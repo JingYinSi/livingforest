@@ -1,0 +1,15 @@
+<!--index.wxml-->
+<view class="container">
+  <image style="width: 100%; height: 200px; background-color: #eeeeee;" src="{{banner}}"></image>
+  <view class="list" wx:for="{{list.items}}" wx:for-item="item" wx:key="item">
+    <view class="list_item">
+      <image class="list_item_img" mode="aspectFit" src="{{list.img}}"></image>
+      <view class="list_item_content">
+        <view class="list_item_content_title">{{item.text}}</view>
+        <view class="list_item_content_desc">{{item.desc}}</view>
+      </view>
+      <view class="list_item_action">
+      </view>
+    </view>
+  </view>
+</view>
