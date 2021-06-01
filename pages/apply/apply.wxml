@@ -1,6 +1,7 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="activatiesBar">
+  <view class="titleBar">
+    <view class="activatiesBar">
     <view class="selectedActivaty">
       <view class="selectedActivatyText">{{activaties.items[0].text}}</view>
       <view class="selectedActivatyLine"></view>
@@ -13,5 +14,10 @@
       <view class="activatyText">{{activaties.items[2].text}}</view>
       <view class="activatyLine"></view>
     </view>
+    </view>
+    <view class="allActivatiesButton">
+      <text class="allActivatiesButtonText">全部</text>
+    </view>
   </view>
+  
 </view>

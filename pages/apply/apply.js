@@ -11,7 +11,7 @@ Page({
           selected: true
         },
         {
-          text: "日常功课"
+          text: "日常"
         },
         {
           text: "共修"
