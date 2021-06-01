@@ -1,0 +1,47 @@
+
+
+.container {
+  background-color: #EBDFCB;
+  padding-left: 26pt;
+} 
+.activatiesBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+  height: 44pt;
+}
+.selectedActivaty {
+  display: flex;
+  flex-direction: column;
+  width: 73pt;
+  align-items: center;
+}
+.selectedActivatyText {
+  height: 26pt;
+  font-size: 24px;
+  text-align: center;
+}
+.selectedActivatyLine {
+  height: 4pt;
+  width: 30pt;
+  background: linear-gradient(to left, #FBA39F, #C72824);
+}
+
+.activaty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 16pt;
+}
+
+.activatyLine {
+  height: 4pt;
+  width: 30pt;
+}
+
+.activatyText {
+  height: 15pt;
+  font-size: 14px;
+  text-align: center;
+}

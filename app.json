@@ -1,22 +1,25 @@
 {
+  "entryPagePath": "pages/apply/apply",
   "pages":[
+    "pages/apply/apply",
     "pages/index/index",
     "pages/lesson/lesson",
     "pages/logs/logs"
   ],
   "tabBar": {
     "list": [
-      { "text": "共修", "pagePath": "pages/index/index"},
-      { "text": "功课", "pagePath": "pages/lesson/lesson"},
-      { "text": "我", "pagePath": "pages/logs/logs"}
+      { "text": "报数", "pagePath": "pages/index/index"},
+      { "text": "统计", "pagePath": "pages/lesson/lesson"},
+      { "text": "我的", "pagePath": "pages/logs/logs"}
     ]
   },
   "window":{
+    "navigationBarBackgroundColor": "#EBDFCB",
+    "navigationBarTextStyle":"black",
+    "navigationBarTitleText": "薩嘎月",
+    "navigationStyle": "custom",
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#000",
-    "navigationBarTitleText": "居士林",
-    "navigationBarTextStyle":"white",
-    "backgroundColor": "#000"
+    "backgroundColor": "#EBDFCB"
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"
