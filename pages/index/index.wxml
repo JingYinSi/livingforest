@@ -2,40 +2,52 @@
 <view class="container">
   <view class="titleBar">
     <view class="leftTitleBar">
-      <view class="selectedActivaty">
-        <view class="selectedActivatyText">{{activaties.items[0].text}}</view>
-        <view class="activatyLine selectedLine"></view>
-      </view>
-      <view class="activaty">
-        <view class="activatyText">{{activaties.items[1].text}}</view>
-        <view class="activatyLine"></view>
-      </view>
-      <view class="activaty">
-        <view class="activatyText">{{activaties.items[2].text}}</view>
-        <view class="activatyLine"></view>
-      </view>
+      <block  wx:for="{{activaties}}" wx:for-item="item" wx:key="item">
+        <block wx:if="{{item.selected}}">
+          <view class="selectedActivaty">
+            <view class="selectedActivatyText">{{item.text}}</view>
+            <view class="activatyLine selectedLine"></view>
+          </view>
+        </block>
+        <block wx:else>
+          <view class="activaty">
+            <view class="activatyText">{{item.text}}</view>
+            <view class="activatyLine"></view>
+          </view>
+        </block>
+        
+      </block>
     </view>
     <view class="rightTitleBar">
       <view class="allActivatiesButton">
         <text class="allActivatiesButtonText">全部</text>
       </view>
     </view>
-    
   </view>
+
   <view class="lessonsBar">
-    <view class="lessonBtn lessonBtnSelected"><text class="lessonBtnText lessonBtnTextSelected">莲师</text></view>
-    <view class="lessonBtn"><text class="lessonBtnText">文殊</text></view>
-    <view class="lessonBtn"><text class="lessonBtnText">马金</text></view>
+    <block  wx:for="{{lessons}}" wx:for-item="item" wx:key="item">
+      <block wx:if="{{item.selected}}">
+        <view class="lessonBtn lessonBtnSelected">
+          <text class="lessonBtnText lessonBtnTextSelected">{{item.text}}</text>
+        </view>
+      </block>
+      <block wx:else>
+        <view class="lessonBtn">
+          <text class="lessonBtnText">{{item.text}}</text>
+        </view>
+      </block>
+    </block>
   </view>
+
   <view class="mainArea" style="padding-top:21px">
     <view class="mainAreaTitleBar">
-      <text class="lessonText lessonTitle">莲花生大士心咒</text>
-      <text class="lessonText lessonSubTitle">每日需完成3000遍</text>
+      <text class="lessonText lessonTitle">{{title}}</text>
+      <text class="lessonText lessonSubTitle">{{subtitle}}</text>
     </view>
     <view class="mainAreaBody" >
       <image class="tangCard" style="height: 42px" src="../../imgs/index_up.png"></image>
-      <image style="width: 91.4%; height: 469px;"
-        mode="scaleToFill" src="../../imgs/lotus.jpg"></image>
+      <image style="width: 91.4%; height: 469px;" src="{{card}}"></image>
       <image class="tangCard" style="height: 137px;" src="../../imgs/index_down.png"></image>
     </view>
   </view>

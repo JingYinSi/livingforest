@@ -31,6 +31,7 @@
   flex-direction: column;
   height: 39px;
   align-items: center;
+  padding-right: 17px;
 }
 .selectedActivatyText {
   font-size: 26px;
@@ -49,13 +50,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-right: 17px;
 }
 
 .activatyText {
   font-size: 15px;
   letter-spacing: 1px;
   color: #545454;
-  padding-left: 17px;
+  
 }
 
 .allActivatiesButton {
