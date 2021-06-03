@@ -4,7 +4,7 @@
     <view class="leftTitleBar">
       <view class="selectedActivaty">
         <view class="selectedActivatyText">{{activaties.items[0].text}}</view>
-        <view class="selectedActivatyLine"></view>
+        <view class="activatyLine selectedLine"></view>
       </view>
       <view class="activaty">
         <view class="activatyText">{{activaties.items[1].text}}</view>
@@ -27,14 +27,15 @@
     <view class="lessonBtn"><text class="lessonBtnText">文殊</text></view>
     <view class="lessonBtn"><text class="lessonBtnText">马金</text></view>
   </view>
-  <view class="mainArea" style="padding-top:25px">
+  <view class="mainArea" style="padding-top:21px">
     <view class="mainAreaTitleBar">
       <text class="lessonText lessonTitle">莲花生大士心咒</text>
       <text class="lessonText lessonSubTitle">每日需完成3000遍</text>
     </view>
     <view class="mainAreaBody" >
       <image class="tangCard" style="height: 42px" src="../../imgs/index_up.png"></image>
-      <image style="width: 91.4%; height: 469px;" src="../../imgs/lotus.jpg"></image>
+      <image style="width: 91.4%; height: 469px;"
+        mode="scaleToFill" src="../../imgs/lotus.jpg"></image>
       <image class="tangCard" style="height: 137px;" src="../../imgs/index_down.png"></image>
     </view>
   </view>

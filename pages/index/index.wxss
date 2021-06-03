@@ -19,31 +19,29 @@
   justify-content: flex-start;
   align-items: flex-end;
   height: 49px;
-  background-color: blueviolet;
 }
 .rightTitleBar {
   display: flex;
   flex-direction: row-reverse;
-  align-items: center;
+  align-items:flex-end;
   height: 49px;
-  background-color:chartreuse;
 }
 .selectedActivaty {
   display: flex;
   flex-direction: column;
   height: 39px;
-  justify-content: space-between;
   align-items: center;
-  background-color: cyan;
 }
 .selectedActivatyText {
   font-size: 26px;
   letter-spacing: 1px;
-  background-color: darkgoldenrod;
 }
-.selectedActivatyLine {
+
+.activatyLine {
   height: 4px;
   width: 50%;
+}
+.selectedLine {
   background: linear-gradient(to left, #FBA39F, #C72824);
 }
 
@@ -53,23 +51,19 @@
   align-items: center;
 }
 
-.activatyLine {
-  height: 2pt;
-  width: 28.5pt;
-}
-
 .activatyText {
   font-size: 15px;
+  letter-spacing: 1px;
   color: #545454;
-  text-align: center;
+  padding-left: 17px;
 }
 
 .allActivatiesButton {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 52pt;
-  height: 24pt;
+  width: 57px;
+  height: 26px;
   border-style: solid;
   border-width: 1pt;
   border-color: #AC936C;
@@ -77,7 +71,8 @@
 }
 .allActivatiesButtonText {
   width: 28.5pt;
-  font-size: 11pt;
+  font-size: 15px;
+  letter-spacing: 1px;
   text-align: center;
   color: #AC936C;
 }
@@ -87,26 +82,25 @@
   flex-direction: row;
   width: 91.55%;
   justify-content: flex-start;
-  height: 24pt;
+  height: 26px;
   margin-top: 21px;
-  background-color: darkgreen;
 }
 .lessonBtn {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 52pt;
-  height: 24pt;
+  width: 57px;
+  height: 26px;
   background-color: #DABD95;
   border-color: #AC936C;
-  border-radius: 11.5pt;
-  margin-right: 16pt;
+  border-radius: 11.13px;
+  margin-right: 8px;
 }
 .lessonBtnSelected {
   box-shadow: 0 6px 6px 0 #D1B389FF, 0 6px 20px 0 #D1B389FF;
 }
 .lessonBtnText {
-  font-size: 11pt;
+  font-size: 13px;
   color: #AC936C;
 }
 .lessonBtnTextSelected {
@@ -116,34 +110,31 @@
   display: flex;
   flex-direction: row;
   width: 91.55%;
-  background-color: darkslateblue;
 }
 .mainAreaTitleBar {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 7.6%;
-  background-color: deepskyblue;
 }
 .lessonText {
   text-orientation: mixed;
   writing-mode: vertical-rl;
 }
 .lessonTitle {
-  padding-top:20px;
-  font-size:20pt;
-  letter-spacing: 3pt;
+  padding-top:26px;
+  font-size:22px;
+  letter-spacing: 3px;
 }
 .lessonSubTitle {
-  padding-top:40px;
-  font-size:13pt;
-  letter-spacing: 0.3pt;
+  padding-top:33px;
+  color: #636363;
+  font-size:14px;
 }
 .mainAreaBody {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: gold;
   width: 92.2%;
 }
 .tangCard {

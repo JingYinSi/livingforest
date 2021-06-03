@@ -12,10 +12,10 @@ Page({
           selected: true
         },
         {
-          text: "日常"
+          text: "百日共修"
         },
         {
-          text: "共修"
+          text: "日常"
         }
       ]
     }
