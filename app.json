@@ -13,9 +13,7 @@
   },
   "window":{
     "navigationBarBackgroundColor": "#EBDFCB",
-    "navigationBarTextStyle":"black",
-    "navigationBarTitleText": "薩嘎月",
-    "navigationStyle": "custom",
+    "navigationStyle": "default",
     "backgroundTextStyle":"light",
     "backgroundColor": "#EBDFCB"
   },

@@ -1,23 +1,26 @@
 <!--index.wxml-->
 <view class="container">
   <view class="titleBar">
-    <view class="activatiesBar">
-    <view class="selectedActivaty">
-      <view class="selectedActivatyText">{{activaties.items[0].text}}</view>
-      <view class="selectedActivatyLine"></view>
+    <view class="leftTitleBar">
+      <view class="selectedActivaty">
+        <view class="selectedActivatyText">{{activaties.items[0].text}}</view>
+        <view class="selectedActivatyLine"></view>
+      </view>
+      <view class="activaty">
+        <view class="activatyText">{{activaties.items[1].text}}</view>
+        <view class="activatyLine"></view>
+      </view>
+      <view class="activaty">
+        <view class="activatyText">{{activaties.items[2].text}}</view>
+        <view class="activatyLine"></view>
+      </view>
     </view>
-    <view class="activaty">
-      <view class="activatyText">{{activaties.items[1].text}}</view>
-      <view class="activatyLine"></view>
+    <view class="rightTitleBar">
+      <view class="allActivatiesButton">
+        <text class="allActivatiesButtonText">全部</text>
+      </view>
     </view>
-    <view class="activaty">
-      <view class="activatyText">{{activaties.items[2].text}}</view>
-      <view class="activatyLine"></view>
-    </view>
-    </view>
-    <view class="allActivatiesButton">
-      <text class="allActivatiesButtonText">全部</text>
-    </view>
+    
   </view>
   <view class="lessonsBar">
     <view class="lessonBtn lessonBtnSelected"><text class="lessonBtnText lessonBtnTextSelected">莲师</text></view>
@@ -30,9 +33,9 @@
       <text class="lessonText lessonSubTitle">每日需完成3000遍</text>
     </view>
     <view class="mainAreaBody" >
-      <image style="width: 318px; height: 38px;" src="../../imgs/index_up.png"></image>
-      <image style="width: 290px; height: 425px;" src="../../imgs/lotus.jpg"></image>
-      <image style="width: 320px; height: 124px;" src="../../imgs/index_down.png"></image>
+      <image class="tangCard" style="height: 42px" src="../../imgs/index_up.png"></image>
+      <image style="width: 91.4%; height: 469px;" src="../../imgs/lotus.jpg"></image>
+      <image class="tangCard" style="height: 137px;" src="../../imgs/index_down.png"></image>
     </view>
   </view>
   
