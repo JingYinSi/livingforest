@@ -1,4 +1,5 @@
 // index.js
+
 // 获取应用实例
 const app = getApp()
 
@@ -32,7 +33,16 @@ Page({
     title: "莲花生大士心咒",
     subtitle: "每日需完成3000遍"
   },
-  imageError: function(e) {
-    console.log('image3发生error事件，携带值为', e.detail.errMsg)
+  selectFromCollection: function (event) {
+    var {collname, tosel} = event.currentTarget.dataset
+    var coll = this.data[collname]
+    coll = coll.map(element => {
+      if (element.selected) element.selected = undefined
+      if (element.text == tosel.text) element.selected = true
+      return element
+    });
+    var obj = {}
+    obj[collname] = coll
+    this.setData(obj)
   }
 })
