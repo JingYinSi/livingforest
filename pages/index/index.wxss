@@ -107,10 +107,24 @@
 .mainAreaTitleBar {
   display: flex;
   flex-direction: column;
+  align-items: center;
+}
+.lessonText {
   text-orientation: mixed;
   writing-mode: vertical-rl;
+}
+.lessonTitle {
+  padding-top:20px;
+  font-size:20pt;
+  letter-spacing: 3pt;
+}
+.lessonSubTitle {
+  padding-top:40px;
+  font-size:13pt;
+  letter-spacing: 0.3pt;
 }
 .mainAreaBody {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }

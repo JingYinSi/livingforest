@@ -24,12 +24,15 @@
     <view class="lessonBtn"><text class="lessonBtnText">文殊</text></view>
     <view class="lessonBtn"><text class="lessonBtnText">马金</text></view>
   </view>
-  <view class="mainArea">
+  <view class="mainArea" style="padding-top:25px">
     <view class="mainAreaTitleBar">
-      <text>莲花生大士心咒</text>
+      <text class="lessonText lessonTitle">莲花生大士心咒</text>
+      <text class="lessonText lessonSubTitle">每日需完成3000遍</text>
     </view>
-    <view class="mainAreaBody">
-      <image style="width: 318px; height: 38px;" src="{{upPic}}"></image>
+    <view class="mainAreaBody" >
+      <image style="width: 318px; height: 38px;" src="../../imgs/index_up.png"></image>
+      <image style="width: 290px; height: 425px;" src="../../imgs/lotus.jpg"></image>
+      <image style="width: 320px; height: 124px;" src="../../imgs/index_down.png"></image>
     </view>
   </view>
   
