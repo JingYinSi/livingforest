@@ -11,7 +11,7 @@
           </view>
         </block>
         <block wx:else>
-          <view class="activaty" data-collname="activaties" data-tosel="{{item}}" bindtap="selectFromCollection">
+          <view class="activaty" data-tosel="{{item}}" bindtap="selectFromActivaties">
             <view class="activatyText">{{item.text}}</view>
             <view class="activatyLine"></view>
           </view>
@@ -33,7 +33,7 @@
         </view>
       </block>
       <block wx:else>
-        <view class="lessonBtn" data-collname="lessons" data-tosel="{{item}}" bindtap="selectFromCollection">
+        <view class="lessonBtn" data-tosel="{{item}}" bindtap="selectFromLessons">
           <text class="lessonBtnText">{{item.text}}</text>
         </view>
       </block>
@@ -42,14 +42,38 @@
 
   <view class="mainArea" style="padding-top:21px">
     <view class="mainAreaTitleBar">
-      <text class="lessonText lessonTitle">{{title}}</text>
-      <text class="lessonText lessonSubTitle">{{subtitle}}</text>
+      <text class="lessonText lessonTitle">{{currentLesson.title}}</text>
+      <text class="lessonText lessonSubTitle">{{currentLesson.subtitle}}</text>
     </view>
     <view class="mainAreaBody" >
-      <image class="tangCard" style="height: 42px" src="../../imgs/index_up.png"></image>
-      <image style="width: 91.4%; height: 469px;" src="{{card}}"></image>
-      <image class="tangCard" style="height: 137px;" src="../../imgs/index_down.png"></image>
+      <image class="topOfTangCard" src="../../imgs/index_up.png"></image>
+      <image style="width: 91.4%; height: 469.2px;" src="{{currentLesson.tangCard}}"></image>
+      <view class="bottomOfTangCard">
+        <image style="width: 100%; height: 100%" src="../../imgs/index_down.png"></image>
+      </view>
+      <view class="applyArea">
+        <view class="applyOutline">
+          <block wx:if="{{focusOnApply}}">
+            <input class="applyBox_Focused" auto-focus
+              type="digit" bindblur="selectApply"
+              model:value="{{apply}}" placeholder="{{currentLesson.target}}"></input>
+          </block>
+          <block wx:else>
+            <view class="applyBox" bindtap="selectApply">{{currentLesson.apply?currentLesson.apply:currentLesson.target}}</view>
+          </block>
+        </view>
+        <image class="submitBtn" bindtap="submitApply" src="../../imgs/submit.png">
+          <view class="submitText">提交</view>
+        </image>
+      </view>
     </view>
   </view>
-  
+  <view class="toolBar">
+    <block wx:for="{{tools}}" wx:for-item="item" wx:key="item">
+      <view class="toolItem">
+        <image class="toolItemImg" src="../../imgs/{{item.img}}{{item.current}}.png"></image>
+        <view class="toolItemText">{{item.text}}</view>
+      </view>
+    </block>
+  </view>
 </view>

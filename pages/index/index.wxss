@@ -138,8 +138,105 @@
   flex-direction: column;
   align-items: center;
   width: 92.2%;
+  height: 653.57px;
 }
-.tangCard {
+.topOfTangCard {
   width: 100%;
-  height: 38px;
+  height: 41.95px;
+}
+.bottomOfTangCard {
+  display: flex;
+  flex-direction: row;
+  padding-top: 5.52px;
+  width: 100%;
+  height: 136.9px;
+}
+.applyArea {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  left: 38.5%;
+  top: 582px;
+  height: 149px;
+  width: 28%;
+  z-index: 2;
+}
+.submitBtn {
+  height: 115.92px;
+  width: 100%;
+}
+.submitText {
+  position: absolute;
+  top: 72px;
+  left: 38%;
+  height: 14px;
+  font-size: 13px;
+  font-family: FZQKBYSJW--GB1-0, FZQKBYSJW--GB1;
+  font-weight: normal;
+  color: #F1D4AD;
+  line-height: 14px;
+  letter-spacing: 1px;
+  z-index: 4;
+}
+
+.applyOutline {
+  display: flex;
+  justify-content: center;
+  width: 99px;
+  height: 33px;
+  border-radius: 16px;
+  border: 1px solid #DABD95;
+}
+.applyBox {
+  width: 80%;
+  height: 31px;
+  font-size: 22px;
+  text-align: center;
+  font-family: STSongti-SC-Regular, STSongti-SC;
+  font-weight: 400;
+  color: #FFEDD4;
+  line-height: 31px;
+  letter-spacing: 3px;
+}
+.applyBox_Focused {
+  width: 80%;
+  height: 31px;
+  font-size: 22px;
+  text-align: center;
+  font-family: STSongti-SC-Regular, STSongti-SC;
+  font-weight: 400;
+  line-height: 31px;
+  letter-spacing: 3px;
+  color: black;
+  background-color: #FFEDD4;
+}
+.toolBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 91.55%;
+  height: 54px;
+  background: #EBDFCB;
+}
+.toolItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 9%;
+  height: 47px;
+}
+.toolItemImg {
+  width: 100%;
+  height: 32px;
+}
+.toolItemText {
+  width: 90%;
+  height: 15px;
+  font-size: 11px;
+  font-family: PingFang-SC-Regular, PingFang-SC;
+  font-weight: 400;
+  color: #A54B39;
+  line-height: 15px;
+  letter-spacing: 1px;
 }

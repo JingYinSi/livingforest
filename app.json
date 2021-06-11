@@ -4,13 +4,6 @@
     "pages/lesson/lesson",
     "pages/logs/logs"
   ],
-  "tabBar": {
-    "list": [
-      { "text": "报数", "pagePath": "pages/index/index"},
-      { "text": "统计", "pagePath": "pages/lesson/lesson"},
-      { "text": "我的", "pagePath": "pages/logs/logs"}
-    ]
-  },
   "window":{
     "navigationBarBackgroundColor": "#EBDFCB",
     "navigationStyle": "default",
