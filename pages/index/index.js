@@ -28,7 +28,7 @@ const currentActivaty = {
       text: "马金",
       title: "马金鹏心咒",
       subtitle: "每日需完成100遍",
-      tangCard: "../../data/lotus.jpg",
+      tangCard: "../../data/mtking.jpg",
       apply: null,
       target: 100
     }
@@ -44,19 +44,11 @@ Page({
         text: "百日共修",
         lessons: [
           {
-            text: "莲师",
-            selected: true,
-            title: "莲花生大士心咒",
-            subtitle: "每日需完成3000遍",
-            tangCard: "../../data/lotus.jpg",
-            apply: null,
-            target: 3000
-          },
-          {
             text: "普获悉地",
+            selected: true,
             title: "普获悉地祈祷文",
             subtitle: "每日需完成100遍",
-            tangCard: "../../data/lotus.jpg",
+            tangCard: "../../data/mtking.jpg",
             apply: null,
             target: 100
           },
@@ -78,7 +70,7 @@ Page({
             selected: true,
             title: "观音心咒",
             subtitle: "每日需完成2000遍",
-            tangCard: "../../data/lotus.jpg",
+            tangCard: "../../data/gy.jpeg",
             apply: null,
             target: 2000
           }
@@ -150,12 +142,11 @@ Page({
     this.setData(obj)
   },
   selectApply: function (event) {
-    var focusOnApply = !this.data.focusOnApply
-    this.setData({focusOnApply})
+    this.setData({focusOnApply: true})
   },
   submitApply: function (event) {
     var currentLesson = this.data.currentLesson
     currentLesson.apply = this.data.apply
-    this.setData({currentLesson})
+    this.setData({currentLesson, focusOnApply: false})
   }
 })

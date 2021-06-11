@@ -62,9 +62,15 @@
             <view class="applyBox" bindtap="selectApply">{{currentLesson.apply?currentLesson.apply:currentLesson.target}}</view>
           </block>
         </view>
-        <image class="submitBtn" bindtap="submitApply" src="../../imgs/submit.png">
-          <view class="submitText">提交</view>
-        </image>
+        <block wx:if="{{currentLesson.apply < currentLesson.target}}">
+          <image class="submitBtn" bindtap="submitApply" src="../../imgs/submit.png">
+            <view class="submitText">提交</view>
+          </image>
+        </block>
+        <block wx:else>
+          <image class="submitBtn" bindtap="submitApply" src="../../imgs/finish.png">
+          </image>
+        </block>
       </view>
     </view>
   </view>
