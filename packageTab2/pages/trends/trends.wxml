@@ -1,0 +1,63 @@
+<view class="page">
+  <view class="box_1">
+    <view class="box_2">
+      <image class="image_1"></image>
+    </view>
+    <view class="box_3">
+      <view class="image-text_1">
+        <image class="image_2" src="../../imgs/trends/SketchPng6634dcefa3968880080f95cb5b2df1fa2b99b6a8cd254cd6946b1dd5b819fb56.png" class="image_2" bindtap="toShowSquare"></image>
+        <text lines="1" class="text-group_1">{{currentLesson.name}}</text>
+      </view>
+      <image class="image_3"></image>
+    </view>
+    <view class="list_1">
+      <view class="text-group_2-0">
+        <text lines="1" class="text_2-0">今日</text>
+        <text lines="1" class="text_4-0">{{currentLesson.todayPopulations}}人</text>
+      </view>
+      <view class="text-group_2-1">
+        <text lines="1" class="text_3-1">功课合记</text>
+        <text lines="1" class="text_4-1">{{currentLesson.todayTimes/10000}}万遍</text>
+      </view>
+    </view>
+    <view class="box_4"></view>
+  </view>
+  <view class="box_5">
+    <view class="text-wrapper_1">
+      <text lines="1" class="text_5">同学动态</text>
+    </view>
+    <view>
+      <swiper class="swiper_container" vertical="true" autoplay="true" circular="true" interval="1000" duration="1000" previousMargin="0" nextMargin = "0" easing-function="linear" display-multiple-items="{{userList.length>6?6:userList.length}}" > 
+      <block wx:for="{{userList}}" wx:for-item="item" wx:key="item">
+        <swiper-item> 
+          <view class="block_3">
+            <view class="image-text_4">
+              <image wx:if="{{item.pic == ''}}" src="../../imgs/trends/SketchPng0e6de4923e16065f4cdb0bf1f56fe35de9c9defc1d4282e420b9ead2eb0d6771.png" class="image_6"></image>
+              <image  wx:else src="{{item.pic}}" class="image_6"></image>
+              <view class="text-group_5">
+                <text lines="1" class="text_12">{{item.name}}</text>
+                <text lines="1" decode="true" class="text_13">完成&nbsp;{{currentLesson.name}}{{item.times}}遍</text>
+              </view>
+            </view>
+            <text lines="1" class="text_14">随喜赞叹</text>   
+          </view>
+        </swiper-item> 
+      </block>
+      </swiper> 
+    </view> 
+  </view>
+  <view class="box_6">
+    <text lines="1" class="text_15">功课排名</text>
+    <view class="group_1">
+      <image src="../../imgs/trends/SketchPnga1c922fe8d9b70d3ed3149b8481039cdff2128507095d4ed3c8116013fe0fb01.png" class="image_7"></image>
+      <text lines="1" class="text_16">益西卓玛</text>
+    </view>
+    <view class="text-wrapper_2" bindtap="showRanking">
+      <text lines="1" class="text_17">查看排名</text>
+    </view>
+    <view class="group_2">
+      <view class="box_7"></view>
+    </view>
+    <image src="../../imgs/trends/SketchPng69e56a54e385b832643c9f56b22bc74cd1ebb749b467064b61afe2dfdce67181.png" class="image_8"></image>
+  </view>
+</view>

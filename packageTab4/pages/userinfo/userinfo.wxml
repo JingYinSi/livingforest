@@ -1,0 +1,70 @@
+<view class="page">
+  <view class="group_1">
+    <view class="box_1">
+      <view class="group_3">
+        <image class="image_back" src="../../imgs/userinfo/SketchPng77ef82329ffee68451741e770ef4b6b663ea5792a61839910e04583070b84581.png"  bindtap="toShowMine"></image>
+        <text lines="1" class="text_2">个人信息</text>
+      </view>
+      <view class="group_4">
+        <text lines="1" class="text_3">头像</text>
+        <image wx:if="{{pic== ''}}" src="../../imgs/userinfo/d1ca37753ce54c0890b4cec85839d0b3_mergeImage.png" bindtap="chooseImage" class="userImg"></image>
+        <image  wx:else src="{{pic}}" bindtap="chooseImage" class="userImg"></image>
+        <image src="../../imgs/userinfo/SketchPngc76865b7aa6fa313b5ef08597aa57947c5983db79cf6b870215c7dee257b95bc.png" class="thumbnail_1" bindtap="chooseImage" ></image>
+      </view>
+      <view class="group_5"></view>
+      <view class="group_6">
+        <text lines="1" class="text_4">昵称</text>
+        <text lines="1" class="text_5">{{userName}}</text>
+        <view>
+          <image src="../../imgs/userinfo/SketchPng20517e7c6fc05fd6729de757865cd659495781128d12dd840bcd5745be61dc0e.png" class="label_1" bindtap="showNameSet"></image>
+        </view>
+      </view>
+      <view class="group_7"></view>
+      <view class="group_8">
+        <text lines="1" class="text_6">地区</text>
+        <view class="picker_text">
+          <picker mode="region" bindchange="getUserAddress" value="{{region}}" >
+          <text lines="1" class="text_7">
+            <block wx:if="{{region[0] == '' || region[0] == null}}">请选择所在地区</block>
+            <block wx:else>{{region[0]}} {{region[1]}} {{region[2]}}</block>
+          </text>
+        </picker>
+        </view>
+        
+        <view>
+          <image src="../../imgs/userinfo/SketchPngc76865b7aa6fa313b5ef08597aa57947c5983db79cf6b870215c7dee257b95bc.png" class="thumbnail_2"></image>
+        </view>
+        
+      </view>
+      <view class="text-wrapper_1" bindtap="saveUserInfo">
+        <text lines="1" class="text_8">保存</text>
+      </view>
+    </view>
+    <view class="box_2">
+    </view>
+  </view>
+
+  <block wx:if="{{isShowNameSet}}">
+    <view class="hui_box_13" catchtouchmove="true">
+    <view class="hui_box_14">
+      <view class="hui_box_15">
+        <text lines="1" class="hui_text_8">昵称修改</text>
+      </view>
+      <view class="hui_box_close">
+        <image src="../../imgs/userinfo/close.png" class="hui_label_3" bindtap="closeNameSet"></image>
+      </view>
+      <view class="hui_box_16">
+        <view class="hui_box_17">
+          <textarea lines="1" maxlength="10" class="hui_text_9" auto-focus="true" placeholder="输入修改内容" bindinput='limitWord' value="{{userName}}"></textarea>
+        </view>
+        <view class="hui_text-wrapper_1">
+          <text lines="1" class="hui_text_10">{{currentWord}}/10</text>
+        </view>
+      </view>
+      <view class="hui_text-wrapper_2" bindtap="submitNameSet">
+        <text lines="1" class="hui_text_11">确认</text>
+      </view>
+    </view>
+  </view>
+  </block>
+</view>

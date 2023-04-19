@@ -1,152 +1,300 @@
-// index.js
-
-// 获取应用实例
-const app = getApp()
-const currentActivaty = {
-  text: "萨嘎月",
-  selected: true,
-  lessons: [
-    {
-      text: "莲师",
-      selected: true,
-      title: "莲花生大士心咒",
-      subtitle: "每日需完成3000遍",
-      tangCard: "../../data/lotus.jpg",
-      apply: null,
-      target: 3000
-    }
-    ,
-    {
-      text: "文殊",
-      title: "文殊心咒",
-      subtitle: "每日需完成10000遍",
-      tangCard: "../../data/lotus.jpg",
-      apply: null,
-      target: 10000
-    },
-    {
-      text: "马金",
-      title: "马金鹏心咒",
-      subtitle: "每日需完成100遍",
-      tangCard: "../../data/mtking.jpg",
-      apply: null,
-      target: 100
-    }
-  ]
-}
+const app = getApp();
 Page({
   data: {
-    card: "../../data/lotus.jpg",
-    activaties: [
-      currentActivaty
-      ,
-      {
-        text: "百日共修",
-        lessons: [
-          {
-            text: "普获悉地",
-            selected: true,
-            title: "普获悉地祈祷文",
-            subtitle: "每日需完成100遍",
-            tangCard: "../../data/mtking.jpg",
-            apply: null,
-            target: 100
-          },
-          {
-            text: "马金",
-            title: "马金鹏心咒",
-            subtitle: "每日需完成100遍",
-            tangCard: "../../data/lotus.jpg",
-            apply: null,
-            target: 100
+    isShowApply:false,
+    isShowHui:false,
+    isShowDesc:false,
+    selctIndex:0,
+    currentLessonIns:{},
+    applyCount:"",
+    prayerText:"",
+    lessonInstances:[]
+  },
+  onLoad: function() {
+    wx.showShareMenu({//具体详见文档
+      menus: ['shareAppMessage', 'shareTimeline'],
+      success(res) {},
+      fail(e) {}
+    }) 
+  },
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+    
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+    app.globalData.pageName = this
+    this.getLessonList();
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+    
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+    
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+    this.onShow()
+    setTimeout(function () {
+      // 不加这个方法真机下拉会一直处于刷新状态，无法复位
+      wx.stopPullDownRefresh()
+    },2000)
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+    
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+    return {
+      title: '报数',
+      desc: '报数',
+      path: '/pages/index/index'
+    }
+  },
+  onShareTimeline() {
+		return {
+      title: '报数'
+	  }
+	},
+  inputCom: function (event) {
+    console.log(event.detail.value)
+    let applyCount = event.detail.value
+    if(!(/^(0|[1-9][0-9]*|[-1-9][0-9]*)$/.test(applyCount))){
+      wx.showToast({
+        title: '请输入数字',
+        icon: 'none'
+      })
+      applyCount =  applyCount.substring(0,applyCount-1);
+    }
+    this.setData({
+      applyCount:applyCount
+    })
+    return applyCount
+  },
+  showItem:function(event){
+    var that = this
+    var index = event.currentTarget.dataset.index;
+    that.setData({
+      selctIndex:index,
+      currentLessonIns:that.data.lessonInstances[index],
+      applyCount:that.data.lessonInstances[index].target
+    })
+  },
+  getLessonList:function(){
+    var token = app.checkLogin()
+    if(token == null || token == ""){
+      return;
+    }
+    var that = this
+    wx.request({
+      url: app.globalData.indexHref,
+      header:{
+        "authorization":"Bearer " + token,
+        "Cache-Control":"no-cache"
+      },
+      data:{},
+      success:function(res){
+        for(var i=0;i<res.data.links.length;i++){
+          if("currentLessonInstances" == res.data.links[i].rel){
+            wx.request({
+              url: res.data.links[i].href,
+              header:{
+                "authorization":"Bearer " + token,
+                "Cache-Control":"no-cache"
+              },
+              data:{},
+              success:function(res){
+                let lessonInstances = res.data.collection.items;
+                that.setData({
+                  lessonInstances:lessonInstances
+                })
+                for(let i=0;i<res.data.collection.items.length;i++){
+                  wx.request({
+                    url: res.data.collection.items[i].link.href,
+                    header:{
+                      "authorization":"Bearer " + token,
+                      "Cache-Control":"no-cache"
+                    },
+                    data:{},
+                    success:function(res){
+                      let lessonInstance = res.data.LessonInstance;
+                      let reportHref = "";
+                      for(var j=0;j<res.data.links.length;j++){
+                        if("report" == res.data.links[j].rel){
+                          reportHref = res.data.links[j].href;
+                        }
+                      }
+                      lessonInstance.reportHref = reportHref;
+                      for(var j=0;j<res.data.links.length;j++){
+                        if("lesson" == res.data.links[j].rel){
+                          wx.request({
+                            url: res.data.links[j].href,
+                            header:{
+                              "authorization":"Bearer " + token,
+                              "Cache-Control":"no-cache"
+                            },
+                            data:{},
+                            success:function(res){
+                              lessonInstance.lesson = res.data.Lesson
+                              let lessonInstances  = that.data.lessonInstances;
+                              lessonInstances[i] = lessonInstance
+                              that.setData({
+                                lessonInstances:lessonInstances
+                              })
+                              if(i == 0){
+                                that.setData({
+                                  selctIndex:0,
+                                  currentLessonIns:that.data.lessonInstances[0],
+                                  applyCount:that.data.lessonInstances[0].target
+                                })
+                              }
+                            }
+                          })
+                        }
+                      }
+                    }
+                  })
+                }
+              }
+            })
           }
-        ]
+        }
+      }
+    })
+    this.getMyInfo();
+  },
+  getMyInfo:function(){
+    var token = app.checkLogin()
+    if(token == null || token == ""){
+      return;
+    }
+    var that = this
+    wx.request({
+      url: app.globalData.indexHref,
+      header:{
+        "authorization":"Bearer " + token,
+        "Cache-Control":"no-cache"
       },
-      {
-        text: "日常",
-        lessons: [
-          {
-            text: "观音",
-            selected: true,
-            title: "观音心咒",
-            subtitle: "每日需完成2000遍",
-            tangCard: "../../data/gy.jpeg",
-            apply: null,
-            target: 2000
+      data:{},
+      success:function(res){
+        for(var i=0;i<res.data.links.length;i++){
+          if("myInfos" == res.data.links[i].rel){
+            wx.request({
+              url: res.data.links[i].href,
+              header:{
+                "authorization":"Bearer " + token,
+                "Cache-Control":"no-cache"
+              },
+              data:{},
+              success:function(res){
+                wx.request({
+                  url: res.data.collection.items[0].link.href,
+                  header:{
+                    "authorization":"Bearer " + token,
+                    "Cache-Control":"no-cache"
+                  },
+                  data:{},
+                  success:function(res){
+                    that.setData({
+                      prayerText:res.data.MyInfo.prayerText
+                    })
+                  }
+                })
+              }
+            })
           }
-        ]
+        }
       }
-    ],
-    lessons: currentActivaty.lessons,
-    tools: [
-      {
-        text: "报数",
-        img: "toApply",
-        current: "1"
-      },
-      {
-        text: "统计",
-        img: "toStatus"
-      },
-      {
-        text: "我的",
-        img: "toMine"
-      }
-    ],
-    currentActivaty: currentActivaty,
-    currentLesson: currentActivaty.lessons[0],
-    apply: currentActivaty.lessons[0].apply,
-    focusOnApply: false,
+    })
   },
-  onLoad: function(options) {
-    this.selectFromActivaties({currentTarget: {dataset: {tosel: currentActivaty}}})
+  showRecommend: function (event) {
+    wx.navigateTo({
+      url: '/packageTab1/pages/recommend/recommend'
+    })
   },
-  selectFromActivaties: function (event) {
-    var {tosel} = event.currentTarget.dataset
-    var coll = this.data.activaties
-    var currentActivaty, lessons, currentLesson, apply
-    coll = coll.map(element => {
-      if (element.selected) element.selected = undefined
-      if (element.text == tosel.text) {
-        currentActivaty = element
-        currentActivaty.selected = true
-        lessons = currentActivaty.lessons
-        currentLesson = lessons.find(item => {
-          return item.selected
-        })
-        if (!currentLesson) currentLesson = lessons[0]
-        currentLesson.selected = true
-        apply = currentLesson.apply
-      }
-      return element
-    });
-    var obj = {activaties: coll, currentActivaty, lessons, currentLesson, apply}
-    this.setData(obj)
+  showApply: function (event) {
+    this.setData({
+      isShowApply:true
+    })
   },
-  selectFromLessons: function (event) {
-    var {tosel} = event.currentTarget.dataset
-    var coll = this.data.lessons
-    var currentActivaty = this.data.currentActivaty
-    var currentLesson, apply
-    coll = coll.map(element => {
-      if (element.selected) element.selected = undefined
-      if (element.text == tosel.text) {
-        element.selected = true
-        currentLesson = element
-        apply = currentLesson.apply
-      }
-      return element
-    });
-    currentActivaty.lessons = coll
-    var obj = {currentActivaty, lessons: coll, currentLesson, apply}
-    this.setData(obj)
-  },
-  selectApply: function (event) {
-    this.setData({focusOnApply: true})
+  closeApply: function (event) {
+    this.setData({
+      isShowApply:false
+    })
   },
   submitApply: function (event) {
-    var currentLesson = this.data.currentLesson
-    currentLesson.apply = this.data.apply
-    this.setData({currentLesson, focusOnApply: false})
+    var that = this
+    let times = that.data.applyCount;
+    if(times == 0){
+      wx.showToast({
+        title: '请输入正确的数字',
+        icon: 'none'
+      })
+      return;
+    }
+    var token = app.checkLogin()
+    if(token == null || token == ""){
+      return;
+    }
+    
+    var href = event.currentTarget.dataset.href;
+    wx.request({
+      url: href,
+      header:{
+        "authorization":"Bearer " + token
+      },
+      method:"post",
+      data:{"times":that.data.applyCount},
+      success:function(res){
+        that.setData({
+          isShowApply:false,
+          isShowHui:true
+        })
+        setTimeout(function(){
+          that.setData({
+            isShowApply:false,
+            isShowHui:false,
+          })
+        },6000)
+      }
+    })
+  },
+  closeHui: function (event) {
+    this.setData({
+      isShowHui:false
+    })
+  },
+  showDesc: function (event) {
+    this.setData({
+      isShowDesc:true
+    })
+  },
+  closeDesc:function (event) {
+    this.setData({
+      isShowDesc:false
+    })
   }
-})
+});

@@ -1,0 +1,48 @@
+<view class="page">
+  <view class="block_2">
+    <image src="../../imgs/ranking/SketchPng77ef82329ffee68451741e770ef4b6b663ea5792a61839910e04583070b84581.png" class="image_2"  bindtap="toShowTrends"></image>
+    <text lines="1" class="text_2"></text>
+  </view>
+  <view>
+  <image src="../../imgs/ranking/SketchPngd7de3bfe5665d4aa0477aeb8655cb1310976d5cffda721f48ab3dd18b49943cf.png" class="image_4"></image>
+</view>
+  <view class="block_3">
+    <text lines="1" class="text_3">功课排名</text>
+    <view class="text-wrapper_rank">
+    <view class="text-wrapper_1">
+      <text lines="1" class="text_4">排名</text>
+      <text lines="1" class="text_5">同学</text>
+      <text lines="1" class="text_6">念诵</text>
+    </view>
+    <block wx:for="{{userList}}" wx:for-item="item" wx:key="item">
+      <block wx:if="{{index < 3}}">
+      <view class="block_7" >
+        <view class="rank_img">
+          <image src="../../imgs/ranking/NO{{index+1}}.png" class="label_1"></image>
+        </view>
+        <view class="image-text_4">
+            <image wx:if="{{item.pic == ''}}" src="../../imgs/ranking/SketchPng980c8616d9f3736a92e513be846314f776568105014997620881fca240c3f1af.png" class="label_2"></image>
+            <image wx:else src="{{item.pic}}" class="label_2"></image>
+          <text lines="1" class="text-group_4">{{item.name}}</text>
+        </view>
+        <text lines="1" class="text_11">{{item.times/10000}}万遍</text>
+      </view>
+      </block>
+      <block wx:else>
+        <view class="block_7">
+        <text lines="1" class="text_10">NO.{{index+1}}</text>
+        <view class="image-text_4">
+          <image wx:if="{{item.pic == ''}}" src="../../imgs/ranking/SketchPng980c8616d9f3736a92e513be846314f776568105014997620881fca240c3f1af.png" class="label_7"></image>
+          <image wx:else src="{{item.pic}}" class="label_7"></image>
+          <text lines="1" class="text-group_4">{{item.name}}</text>
+        </view>
+        <text lines="1" class="text_11">{{item.times/10000}}万遍</text>
+      </view>
+      </block>
+    </block>
+  </view>
+  </view>
+  <view class="ranking_down">
+    <image src="../../imgs/ranking/SketchPngc9c0451a3dd8955dad80e749893fa4c04eee0f583468889e4001149fc2209ff6.png" class="image_5"></image>
+  </view>
+</view>

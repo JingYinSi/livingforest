@@ -1,0 +1,119 @@
+<view class="page">
+  <view class="image-wrapper_1">
+    <image src="../../imgs/mine/SketchPngcca66d993f227d86032f44d7941d215155d2f15c97858150240885c8803ce935.png" class="image_1"></image>
+  </view>
+  <view class="group_1">
+    <view class="block_1" bindtap="showHuiSet">
+      <view class="image-text_1">
+        <view>
+          <image src="../../imgs/mine/SketchPngf68a6e8f45c9e7da177f109c9c5efc8e5e4069f46ce8a3d506787fd978533b3d.png" class="image_2"></image>
+        </view>
+        <text lines="1" class="text-group_1">回向文设置</text>
+      </view>
+      <image src="../../imgs/mine/SketchPng24ad7789e288b8ddeb06843a99e3b0fa6da0b720f3df7bb28bf4a89b218fdb28.png" class="thumbnail_1"></image>
+    </view>
+    <view class="block_2"></view>
+    <view class="block_5">
+      <view class="image-text_1">
+        <view>
+          <image src="../../imgs/mine/SketchPngcf51cccb8ae6dafe840ba430fb8f6958660c24c2877183fa184ff6378bd9efc4.png" class="image_2"></image>
+        </view>
+        <text lines="1" class="text-group_1">使用指南</text>
+      </view>
+      <image src="../../imgs/mine/SketchPng24ad7789e288b8ddeb06843a99e3b0fa6da0b720f3df7bb28bf4a89b218fdb28.png" class="thumbnail_1"></image>
+    </view>
+    <view class="block_2"></view>
+    <view class="block_5" bindtap="showIdeaSet">
+      <view class="image-text_1">
+        <view>
+          <image src="../../imgs/mine/SketchPng11ced98c8ded68e6d9f1423dff9f0402dea0b4aa2d88d9ab0876445479577692.png" class="image_2"></image>
+        </view>
+        <text lines="1" class="text-group_1">意见反馈</text>
+      </view>
+      <image src="../../imgs/mine/SketchPng24ad7789e288b8ddeb06843a99e3b0fa6da0b720f3df7bb28bf4a89b218fdb28.png" class="thumbnail_1"></image>
+    </view>
+    <view class="block_2"></view>
+    <view class="block_5" bindtap="showContactUs">
+      <view class="image-text_1">
+        <view>
+          <image src="../../imgs/mine/SketchPng7fac8d79fa44395eeb5a8e4bc90c8bc1558d47ff975bec2d8c814dd65af1238d.png" class="image_2"></image>
+        </view>
+        <text lines="1" class="text-group_1">联系我们</text>
+      </view>
+      <image src="../../imgs/mine/SketchPng24ad7789e288b8ddeb06843a99e3b0fa6da0b720f3df7bb28bf4a89b218fdb28.png" class="thumbnail_1"></image>
+    </view>
+  </view>
+  <view class="group_3">
+    <view class="group_5">
+      <image wx:if="{{myInfo.pic==''}}" src="../../imgs/mine/d1ca37753ce54c0890b4cec85839d0b3_mergeImage.png" class="img_label_2"></image>
+      <image wx:else src="{{myInfo.pic}}" class="img_label_2"></image>
+    </view>
+    <view class="image-text_10">
+      <view class="text-group_10">
+        <text lines="1" class="text_2">{{myInfo.name}}</text>
+        <text lines="1" decode="true" class="text_3">{{myInfo.prov}} {{myInfo.city}} {{myInfo.district}}</text>
+      </view>
+    </view>
+    <view class="showUser">
+        <image src="../../imgs/mine/SketchPng7ced51b30f30fb0e5e00021f69bc17879293b3de8fad7725b48030a7e958fd4d.png" class="label_2" bindtap="toShowUserinfo"></image>
+      </view>
+  </view>
+  <block wx:if="{{isShowHuiSet}}">
+    <view class="hui_box_13" catchtouchmove="true">
+    <view class="hui_box_14">
+      <view class="hui_box_15">
+        <text lines="1" class="hui_text_8">回向文设置</text>
+      </view>
+      <view class="hui_box_close">
+        <image src="../../imgs/close.png" class="hui_label_3" bindtap="closeHuiSet"></image>
+      </view>
+      <view class="hui_box_16">
+        <view class="hui_box_17">
+          <textarea lines="1" maxlength="80" class="hui_text_9" auto-focus="true" placeholder="输入回向内容"  bindinput='limitWord' value="{{myInfo.prayerText}}"></textarea>
+        </view>
+        <view class="hui_text-wrapper_1">
+          <text lines="1" class="hui_text_10">{{currentWord}}/80</text>
+        </view>
+      </view>
+      <view class="hui_text-wrapper_2" bindtap="submitHuiSet">
+        <text lines="1" class="hui_text_11">确认提交</text>
+      </view>
+    </view>
+  </view>
+  </block>
+
+  <block wx:if="{{isShowIdeaSet}}">
+    <view class="hui_box_13" catchtouchmove="true">
+    <view class="hui_box_14">
+      <view class="hui_box_15">
+        <text lines="1" class="hui_text_8">意见反馈</text>
+      </view>
+      <view class="hui_box_close">
+        <image src="../../imgs/close.png" class="hui_label_3" bindtap="closeIdeaSet"></image>
+      </view>
+      <view class="hui_box_16">
+        <view class="hui_box_17">
+          <textarea lines="1" maxlength="300" class="hui_text_9" auto-focus="true" placeholder="输入意见反馈内容" bindinput='limitWord'></textarea>
+        </view>
+        <view class="hui_text-wrapper_1">
+          <text lines="1" class="hui_text_10">{{currentWord}}/300</text>
+        </view>
+      </view>
+      <view class="hui_text-wrapper_2" bindtap="submitIdeaSet">
+        <text lines="1" class="hui_text_11">确认提交</text>
+      </view>
+    </view>
+  </view>
+  </block>
+  <block wx:if="{{isShowContactUs}}">
+    <view class="box_15_desc" catchtouchmove="true">
+      <view class="group_5_desc">
+        <view class="block_1_desc">
+          <text lines="1" class="text_9_desc"></text>
+          <image src="../../imgs/close.png" class="label_3_desc" bindtap="closeContactUs"></image>
+        </view>
+        <image src="https://wx.mygdh.top/images/contact.jpg" class="image_us"></image>
+      </view>
+    </view>
+  </block>
+</view>

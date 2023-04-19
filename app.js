@@ -1,19 +1,36 @@
 // app.js
 App({
   onLaunch() {
-    // 展示本地存储能力
-    const logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
-
-    // 登录
-    wx.login({
-      success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-      }
-    })
   },
   globalData: {
-    userInfo: null
+    indexHref:"https://wx.mygdh.top/index",
+    loginHref:"https://wx.mygdh.top/auth/login",
+    pageName:""
+  },
+  checkLogin:function(){
+    var token = wx.getStorageSync("token");
+    if(token == null || token == "" || token == "undefined"){
+      console.log("到这边来1");
+      this.getLoginInfo()
+    }else{
+      console.log("到这边来2");
+      return token
+    }
+  },
+  getLoginInfo: function () {
+    var that = this
+    wx.login({
+      success: res =>{
+        wx.request({
+          url: this.globalData.loginHref,
+          method:"post",
+          data:{"code":res.code},
+          success:function(res){
+            wx.setStorageSync("token",res.data.token);
+            that.globalData.pageName.onShow()
+          }
+        })
+      }
+    })
   }
 })

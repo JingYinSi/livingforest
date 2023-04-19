@@ -1,0 +1,65 @@
+<view class="page">
+  <view class="box_1">
+    <view class="box_3">
+      <view class="image-text_1">
+        <image src="../../imgs/applylog/SketchPng6634dcefa3968880080f95cb5b2df1fa2b99b6a8cd254cd6946b1dd5b819fb56.png" class="image_2" bindtap="toShowBook"></image>
+        <text lines="1" class="text-group_1">{{myLessonIns.name}}</text>
+      </view>
+    </view>
+    <view class="list_1">
+      <view class="text-group_2-0">
+        <text lines="1" class="text_2-0">今日</text>
+        <text lines="1" class="text_4-0">{{myLessonIns.dayTimes/10000}}万</text>
+      </view>
+      <view class="text-group_2-1">
+        <text lines="1" class="text_2-1">本周</text>
+        <text lines="1" class="text_4-1">{{myLessonIns.weekTimes/10000}}万</text>
+      </view>
+      <view class="text-group_2-2">
+        <text lines="1" class="text_3-2">本月</text>
+        <text lines="1" class="text_4-2">{{myLessonIns.monthTimes/10000}}万</text>
+      </view>
+    </view>
+    <view class="box_4"></view>
+    <view class="box_5">
+      <view class="box_6">
+        <view class="text-group_3">
+          <text lines="1" class="text_5">已完成</text>
+          <text lines="1" class="text_6">{{myLessonIns.totalTimes/10000}}万</text>
+        </view>
+        <view class="box_7">
+          <text lines="1" class="text_7">{{myLessonIns.prev}}%</text>
+          <view class="box_8">
+            <view class="box_9" style="width: {{3.3 * myLessonIns.prev}}rpx"></view>
+          </view>
+        </view>
+        <view class="text-group_4">
+          <text lines="1" class="text_8">总目标</text>
+          <text lines="1" class="text_9">{{myLessonIns.totalTarget/10000}}万</text>
+        </view>
+      </view>
+      <view class="text-wrapper_1" bindtap="showTarget">
+        <text lines="1" class="text_10">目标设置</text>
+      </view>
+    </view>
+  </view>
+  <view class="box_10">
+    <text lines="1" class="text_11">统计</text>
+    <block  wx:for="{{applyLogList}}" wx:for-item="item" wx:key="item">
+      <block wx:if="{{index == 0}}">
+        <view class="text-wrapper_2">
+          <text lines="1" decode="true" class="text_12">{{item.createdAt}}</text>
+          <text lines="1" class="text_13">{{item.times}}</text>
+        </view>
+        <image src="../../imgs/applylog/SketchPnge2cf3715ca57842bec846343ab251633f493445d2a58df0f8d778a1876302813.png" class="image_4"></image>
+      </block>
+      <block wx:else>
+        <view class="text-wrapper_3">
+          <text lines="1" decode="true" class="text_14">{{item.createdAt}}</text>
+          <text lines="1" class="text_15">{{item.times}}</text>
+        </view>
+        <image src="../../imgs/applylog/SketchPnge2cf3715ca57842bec846343ab251633f493445d2a58df0f8d778a1876302813.png" class="image_5"></image>
+      </block>
+    </block>
+  </view>
+</view>

@@ -1,15 +1,78 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/lesson/lesson",
-    "pages/logs/logs"
+    "pages/book/book",
+    "pages/square/square",
+    "pages/mine/mine"
+  ],
+  "subPackages": [
+    {
+        "root": "packageTab1", 
+        "pages": [
+            "pages/recommend/recommend",
+            "pages/recommendout/recommendout"
+        ]
+    },
+    {
+        "root": "packageTab2",
+        "pages": [
+            "pages/trends/trends",
+            "pages/ranking/ranking"
+        ]
+    },
+    {
+        "root": "packageTab3",
+        "pages": [
+            "pages/applylog/applylog"
+        ]
+    },
+    {
+        "root": "packageTab4",
+        "pages": [
+            "pages/userinfo/userinfo",
+            "pages/guide/guide"
+        ]
+    }
   ],
   "window":{
-    "navigationBarBackgroundColor": "#EBDFCB",
-    "navigationStyle": "default",
-    "backgroundTextStyle":"light",
-    "backgroundColor": "#EBDFCB"
+      "navigationBarBackgroundColor": "#EBDFCB",
+      "navigationStyle": "custom",
+      "backgroundTextStyle":"light",
+      "backgroundColor": "#EBDFCB",
+      "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#000000",
+    "selectedColor": "#d81e06",
+    "backgroundColor": "#EBDFCB",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "报数",
+        "iconPath": "/imgs/index.png",
+        "selectedIconPath": "/imgs/index1.png"
+      },
+      {
+        "pagePath": "pages/square/square",
+        "text": "功课广场",
+        "iconPath": "/imgs/square.png",
+        "selectedIconPath": "/imgs/square1.png"
+      },
+      {
+        "pagePath": "pages/book/book",
+        "text": "功课簿",
+        "iconPath": "/imgs/book.png",
+        "selectedIconPath": "/imgs/book1.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "/imgs/mine.png",
+        "selectedIconPath": "/imgs/mine1.png"
+      }
+    ]
   },
   "style": "v2",
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
 }

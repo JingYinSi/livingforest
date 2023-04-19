@@ -1,0 +1,27 @@
+<view class="page">
+  <view class="box_1">
+    <view class="group_2">
+      <view class="box_2">
+        <text lines="1" class="text_2" bindtap="showIndex" >功课</text>
+        <text lines="1" class="text_3">推荐</text>
+      </view>
+      <view class="box_3">
+        <image src="../../imgs/recommend/index_line.png" class="index_line"></image>
+      </view>
+    </view>
+    <view class="image-text_1">
+      <text lines="1" class="text-group_1">妙用功德海公众号</text>
+      <image src="../../imgs/recommend/SketchPng1bec91f5031292568e73406c308774ce0a808f9d413f86a335e509f841c3c27a.png" class="thumbnail_1"></image>
+    </view>
+  </view>
+  <block wx:for="{{recommendList}}" wx:for-item="item" wx:key="item">
+    <image src="{{item.pic}}" class="image_3" data-src="{{item.link}}" bindtap="showRecommends" data-title="{{item.name}}"></image>
+    <view class="group_3">
+      <view class="text-group_2">
+        <text lines="1" class="text_5">{{item.name}}</text>
+        <text lines="1" class="text_6">{{item.desc}}</text>
+      </view>
+    </view>
+  </block>
+  <image src="../../imgs/recommend/SketchPng51830bf62d2c604ba874fbc3e26b4441a583116b8f874f0afbed64a7e1822e13.png" class="image_5"></image>
+</view>

@@ -1,0 +1,134 @@
+.page {
+  background-color: rgba(235,223,203,1.000000);
+  position: relative;
+  width: 750rpx;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding-top:30rpx;
+}
+.box_1 {
+  display: flex;
+  flex-direction: column;
+  padding: 28rpx 0 33rpx 0;
+}
+
+.group_2 {
+  background-color: rgba(235,223,203,1.000000);
+  margin-top: 25rpx;
+  display: flex;
+  flex-direction: column;
+  padding: 25rpx 40rpx 0 50rpx;
+}
+
+.box_2 {
+  flex-direction: row;
+  display: flex;
+}
+.text_2 {
+  overflow-wrap: break-word;
+  color: rgba(84,84,84,1);
+  font-size: 40rpx;
+  font-family: FZQKBYSJW--GB1-0;
+  text-align: left;
+  white-space: nowrap;
+  line-height: 44rpx;
+  margin-top: 7rpx;
+}
+.text_3 {
+  overflow-wrap: break-word;
+  color: rgba(0,0,0,1);
+  font-size: 48rpx;
+  letter-spacing: 1rpx;
+  font-family: FZQKBYSJW--GB1-0;
+  text-align: left;
+  white-space: nowrap;
+  line-height: 52rpx;
+  margin: 3rpx 0 0 58rpx;
+}
+.box_3 {
+  display: flex;
+  flex-direction: row;
+  margin: 7rpx 443rpx 0 157rpx;
+}
+.index_line {
+  width: 60rpx;
+  height: 8rpx;
+  background-size: 100% 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.image-text_1 {
+  width: 346rpx;
+  flex-direction: row;
+  display: flex;
+  justify-content: space-between;
+  margin: 60rpx 374rpx 0 30rpx;
+}
+.text-group_1 {
+  overflow-wrap: break-word;
+  color: rgba(169,45,21,1);
+  font-size: 40rpx;
+  font-family: FZQKBYSJW--GB1-0;
+  text-align: left;
+  white-space: nowrap;
+  line-height: 44rpx;
+}
+.thumbnail_1 {
+  width: 12rpx;
+  height: 20rpx;
+  margin: 12rpx 0 12rpx 0;
+}
+.image_3 {
+  width: 690rpx;
+  height: 300rpx;
+  align-self: center;
+  margin-top: -1rpx;
+}
+
+.group_3 {
+  background-color: rgba(255,255,255,1.000000);
+  border-radius: NaNrpx;
+  width: 690rpx;
+  align-self: center;
+  margin-top: -5rpx;
+  margin-bottom:30rpx;
+  display: flex;
+  flex-direction: row;
+  padding: 17rpx 42rpx 45rpx 42rpx;
+}
+
+.text-group_2 {
+  display: flex;
+  flex-direction: column;
+}
+
+.text_5 {
+  width: 606rpx;
+  overflow-wrap: break-word;
+  color: rgba(0,0,0,1);
+  font-size: 39rpx;
+  font-family: PingFangSC;
+  font-weight: normal;
+  text-align: left;
+  line-height: 57rpx;
+}
+.text_6 {
+  overflow-wrap: break-word;
+  color: rgba(0,0,0,1);
+  font-size: 27rpx;
+  font-family: PingFangSC;
+  font-weight: normal;
+  text-align: left;
+  line-height: 30rpx;
+  margin: 20rpx 0 0 0;
+}
+
+.image_5 {
+  width: 690rpx;
+  height: 940rpx;
+  align-self: center;
+  margin-top: 20rpx;
+}
