@@ -12,14 +12,27 @@ Page({
     isShowContactUs:false,
     currentWord: 0,
     prayerTextHref:"",
-    inputTemp:""
+    ideaHref:"",
+    inputTemp:"",
+    windowWidth:'',
+    windowHeight:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function () {
-    
+    var that = this
+    wx.getSystemInfo({
+      success: function(res) {
+        that.setData({
+          "windowWidth": res.windowWidth, //可使用窗口宽度，单位px
+          "windowHeight": res.windowHeight, //可使用窗口高度，单位px
+        })
+        console.log(res.windowWidth, that.data.windowWidth);
+        console.log(res.windowHeight, that.data.windowHeight);
+      }
+    })
   },
 
   /**
@@ -90,6 +103,11 @@ Page({
       data:{},
       success:function(res){
         for(var i=0;i<res.data.links.length;i++){
+          if("suggest" == res.data.links[i].rel){
+            that.setData({
+              ideaHref:res.data.links[i].href
+            })
+          }
           if("myInfos" == res.data.links[i].rel){
             wx.request({
               url: res.data.links[i].href,
@@ -108,7 +126,6 @@ Page({
                   },
                   data:{},
                   success:function(res){
-                    console.log(res)
                     let prayerTextHref = ""
                     for(var i=0;i<res.data.links.length;i++){
                       if("prayerText" == res.data.links[i].rel){
@@ -163,8 +180,18 @@ Page({
         prayerText:this.data.inputTemp
       },
       success:function(res){
-        that.setData({
-          isShowHuiSet:false
+        wx.showToast({
+          title: '提交成功',
+          icon: 'success',
+          duratio:1000,
+          mask:true,
+          success: function () {
+            setTimeout(function () {
+              that.setData({
+                isShowHuiSet:false
+              })
+            }, 1000) //延迟时间
+          }
         })
       }
     })
@@ -181,8 +208,35 @@ Page({
     })
   },
   submitIdeaSet: function (event) {
-    this.setData({
-      isShowIdeaSet:false
+    var that = this
+    var token = app.checkLogin()
+    if(token == null || token == ""){
+      return;
+    }
+    wx.request({
+      url: this.data.ideaHref,
+      header:{
+        "authorization":"Bearer " + token
+      },
+      method:"POST",
+      data:{
+        text:this.data.inputTemp
+      },
+      success:function(res){
+        wx.showToast({
+          title: '提交成功',
+          icon: 'success',
+          duratio:1000,
+          mask:true,
+          success: function () {
+            setTimeout(function () {
+              that.setData({
+                isShowIdeaSet:false
+              })
+            }, 1000) //延迟时间
+          }
+        })
+      }
     })
   },
   limitWord:function(e){    

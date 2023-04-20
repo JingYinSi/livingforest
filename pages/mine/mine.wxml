@@ -59,7 +59,7 @@
       </view>
   </view>
   <block wx:if="{{isShowHuiSet}}">
-    <view class="hui_box_13" catchtouchmove="true">
+    <view class="hui_box_13" catchtouchmove="true" style="width: {{windowWidth}}px;height: {{windowHeight}}px;">
     <view class="hui_box_14">
       <view class="hui_box_15">
         <text lines="1" class="hui_text_8">回向文设置</text>
@@ -83,7 +83,7 @@
   </block>
 
   <block wx:if="{{isShowIdeaSet}}">
-    <view class="hui_box_13" catchtouchmove="true">
+    <view class="hui_box_13" catchtouchmove="true" style="width: {{windowWidth}}px;height: {{windowHeight}}px;">
     <view class="hui_box_14">
       <view class="hui_box_15">
         <text lines="1" class="hui_text_8">意见反馈</text>
@@ -93,10 +93,10 @@
       </view>
       <view class="hui_box_16">
         <view class="hui_box_17">
-          <textarea lines="1" maxlength="300" class="hui_text_9" auto-focus="true" placeholder="输入意见反馈内容" bindinput='limitWord'></textarea>
+          <textarea lines="1" maxlength="100" class="hui_text_9" auto-focus="true" placeholder="输入意见反馈内容" bindinput='limitWord'></textarea>
         </view>
         <view class="hui_text-wrapper_1">
-          <text lines="1" class="hui_text_10">{{currentWord}}/300</text>
+          <text lines="1" class="hui_text_10">{{currentWord}}/100</text>
         </view>
       </view>
       <view class="hui_text-wrapper_2" bindtap="submitIdeaSet">

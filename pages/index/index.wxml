@@ -58,7 +58,7 @@
     </view>
   </view>
   <block wx:if="{{isShowApply}}">
-    <view class="apply_section_8" catchtouchmove="true">
+    <view class="apply_section_8" catchtouchmove="true" style="width: {{windowWidth}}px;height: {{windowHeight}}px;">
       <view class="apply_box_3">
         <view class="apply_box_4">
           <text lines="1" class="apply_text_13">{{currentLessonIns.lesson.title}}</text>
@@ -76,7 +76,7 @@
     </view>
   </block>
   <block wx:if="{{isShowHui}}">
-    <view class="hui_box_11" catchtouchmove="true">
+    <view class="hui_box_11" catchtouchmove="true" style="width: {{windowWidth}}px;height: {{windowHeight}}px;">
       <view class="hui_group_4">
         <view class="hui_box_12">
           <text lines="1" class="hui_text_14">回向</text>
@@ -90,7 +90,7 @@
     </view>
   </block>
   <block wx:if="{{isShowDesc}}">
-    <view class="box_15_desc" catchtouchmove="true">
+    <view class="box_15_desc" catchtouchmove="true" style="width: {{windowWidth}}px;height: {{windowHeight}}px;">
       <view class="group_5_desc">
         <view class="block_1_desc">
           <text lines="1" class="text_9_desc">说明</text>

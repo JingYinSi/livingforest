@@ -8,14 +8,27 @@ Page({
     currentLessonIns:{},
     applyCount:"",
     prayerText:"",
-    lessonInstances:[]
+    lessonInstances:[],
+    windowWidth:'',
+    windowHeight:''
   },
   onLoad: function() {
+    var that = this
     wx.showShareMenu({//具体详见文档
       menus: ['shareAppMessage', 'shareTimeline'],
       success(res) {},
       fail(e) {}
-    }) 
+    }),
+    wx.getSystemInfo({
+      success: function(res) {
+        that.setData({
+          "windowWidth": res.windowWidth, //可使用窗口宽度，单位px
+          "windowHeight": res.windowHeight, //可使用窗口高度，单位px
+        })
+        console.log(res.windowWidth, that.data.windowWidth);
+        console.log(res.windowHeight, that.data.windowHeight);
+      },
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -80,11 +93,10 @@ Page({
 	  }
 	},
   inputCom: function (event) {
-    console.log(event.detail.value)
     let applyCount = event.detail.value
-    if(!(/^(0|[1-9][0-9]*|[-1-9][0-9]*)$/.test(applyCount))){
+    if(!(/^(-?[1-9]\d*|0|-)$/.test(applyCount))){
       wx.showToast({
-        title: '请输入数字',
+        title: '请输入正确的数字',
         icon: 'none'
       })
       applyCount =  applyCount.substring(0,applyCount-1);
@@ -248,7 +260,7 @@ Page({
   submitApply: function (event) {
     var that = this
     let times = that.data.applyCount;
-    if(times == 0){
+    if(times == "-"){
       wx.showToast({
         title: '请输入正确的数字',
         icon: 'none'

@@ -45,7 +45,7 @@
   </view>
 
   <block wx:if="{{isShowNameSet}}">
-    <view class="hui_box_13" catchtouchmove="true">
+    <view class="hui_box_13" catchtouchmove="true" style="width: {{windowWidth}}px;height: {{windowHeight}}px;">
     <view class="hui_box_14">
       <view class="hui_box_15">
         <text lines="1" class="hui_text_8">昵称修改</text>
