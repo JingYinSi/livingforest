@@ -27,8 +27,6 @@ Component({
             "windowWidth": res.windowWidth, //可使用窗口宽度，单位px
             "windowHeight": res.windowHeight, //可使用窗口高度，单位px
           })
-          console.log(res.windowWidth, that.data.windowWidth);
-          console.log(res.windowHeight, that.data.windowHeight);
         },
       })
       console.info("页面加载");

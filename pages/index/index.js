@@ -25,8 +25,6 @@ Page({
           "windowWidth": res.windowWidth, //可使用窗口宽度，单位px
           "windowHeight": res.windowHeight, //可使用窗口高度，单位px
         })
-        console.log(res.windowWidth, that.data.windowWidth);
-        console.log(res.windowHeight, that.data.windowHeight);
       },
     })
   },
@@ -94,7 +92,7 @@ Page({
 	},
   inputCom: function (event) {
     let applyCount = event.detail.value
-    if(!(/^(-?[1-9]\d*|0|-)$/.test(applyCount))){
+    if(!(/^(-?[1-9]\d*|-)$/.test(applyCount))){
       wx.showToast({
         title: '请输入正确的数字',
         icon: 'none'

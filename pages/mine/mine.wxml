@@ -106,7 +106,7 @@
   </view>
   </block>
   <block wx:if="{{isShowContactUs}}">
-    <view class="box_15_desc" catchtouchmove="true">
+    <view class="box_15_desc" catchtouchmove="true" style="width: {{windowWidth}}px;height: {{windowHeight}}px;">
       <view class="group_5_desc">
         <view class="block_1_desc">
           <text lines="1" class="text_9_desc"></text>
