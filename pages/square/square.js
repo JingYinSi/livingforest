@@ -105,6 +105,10 @@ Page({
               },
               data:{},
               success:function(res){
+                if("403" == res.statusCode){
+                  wx.setStorageSync("token","");
+                  return;
+                }
                 let lessonInstances = res.data.collection.items;
                 that.setData({
                   lessonInstances:lessonInstances

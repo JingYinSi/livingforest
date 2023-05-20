@@ -13,7 +13,7 @@
       <image src="../../imgs/mine/SketchPng24ad7789e288b8ddeb06843a99e3b0fa6da0b720f3df7bb28bf4a89b218fdb28.png" class="thumbnail_1"></image>
     </view>
     <view class="block_2"></view>
-    <view class="block_5">
+    <view class="block_5" bindtap="toShowGuide">
       <view class="image-text_1">
         <view>
           <image src="../../imgs/mine/SketchPngcf51cccb8ae6dafe840ba430fb8f6958660c24c2877183fa184ff6378bd9efc4.png" class="image_2"></image>
@@ -33,7 +33,7 @@
       <image src="../../imgs/mine/SketchPng24ad7789e288b8ddeb06843a99e3b0fa6da0b720f3df7bb28bf4a89b218fdb28.png" class="thumbnail_1"></image>
     </view>
     <view class="block_2"></view>
-    <view class="block_5" bindtap="showContactUs">
+    <view class="block_5" bindtap="toShowContactUs">
       <view class="image-text_1">
         <view>
           <image src="../../imgs/mine/SketchPng7fac8d79fa44395eeb5a8e4bc90c8bc1558d47ff975bec2d8c814dd65af1238d.png" class="image_2"></image>
@@ -112,7 +112,9 @@
           <text lines="1" class="text_9_desc"></text>
           <image src="../../imgs/close.png" class="label_3_desc" bindtap="closeContactUs"></image>
         </view>
-        <image src="https://wx.mygdh.top/images/contact.jpg" class="image_us"></image>
+        <view>
+          <image src="https://wx.mygdh.top/images/contact.jpg" class="image_us"></image>
+        </view>
       </view>
     </view>
   </block>

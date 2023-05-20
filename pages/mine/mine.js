@@ -115,6 +115,10 @@ Page({
               },
               data:{},
               success:function(res){
+                if("403" == res.statusCode){
+                  wx.setStorageSync("token","");
+                  return;
+                }
                 let myInfoHref = res.data.collection.items[0].link.href
                 wx.request({
                   url: res.data.collection.items[0].link.href,
@@ -262,6 +266,16 @@ Page({
   closeContactUs: function (event) {
     this.setData({
       isShowContactUs:false
+    })
+  },
+  toShowGuide: function (event) {
+    wx.navigateTo({
+      url: '/packageTab4/pages/guide/guide'
+    })
+  },
+  toShowContactUs: function (event) {
+    wx.navigateTo({
+      url: '/packageTab4/pages/contactus/contactus'
     })
   },
 });

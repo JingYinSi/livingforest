@@ -2,6 +2,7 @@
   background-color: rgba(235,223,203,1.000000);
   position: relative;
   width: 750rpx;
+  min-height: 1624rpx;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -38,9 +39,9 @@
   width: 60rpx;
   height: 60rpx;
 }
-.img_guide {
+.img_contact {
   width: 750rpx;
-  height: 6000rpx;
+  height: 1180rpx;
 }
 .group_4 {
   margin: 65rpx 10rpx 0 35rpx;

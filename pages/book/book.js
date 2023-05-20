@@ -93,6 +93,10 @@ Page({
               },
               data:{},
               success:function(res){
+                if("403" == res.statusCode){
+                  wx.setStorageSync("token","");
+                  return;
+                }
                 res.data.gongLiDaySpilt = res.data.gongLiDay.split('-')
                 that.setData({
                   calenderInfo:res.data

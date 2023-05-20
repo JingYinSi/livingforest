@@ -241,10 +241,7 @@
   position: fixed;
   left: 0rpx;
   top: 0rpx;
-  width: 100%;
-  flex-direction: row;
-  display: flex;
-  padding:300rpx 70rpx 300rpx 70rpx;
+  padding:100rpx 50rpx 200rpx 50rpx;
   z-index: 100;
 }
 .group_5_desc {
@@ -256,7 +253,6 @@
   padding: 29rpx 29rpx 58rpx 35rpx;
 }
 .block_1_desc {
-  width: 329rpx;
   margin-left: 215rpx;
   flex-direction: row;
   display: flex;
@@ -279,8 +275,7 @@
   margin-bottom: 19rpx;
 }
 .image_us {
-  width:500rpx;
-  height: 740rpx;
+  width:580rpx;
+  height: 900rpx;
   align-self: center;
-  margin-top: 20rpx;
 }

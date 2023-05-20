@@ -30,7 +30,8 @@
         "root": "packageTab4",
         "pages": [
             "pages/userinfo/userinfo",
-            "pages/guide/guide"
+            "pages/guide/guide",
+            "pages/contactus/contactus"
         ]
     }
   ],

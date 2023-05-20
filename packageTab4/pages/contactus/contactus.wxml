@@ -3,10 +3,10 @@
     <view class="box_1">
       <view class="group_3">
         <image class="image_back" src="../../imgs/userinfo/SketchPng77ef82329ffee68451741e770ef4b6b663ea5792a61839910e04583070b84581.png"  bindtap="toShowMine"></image>
-        <text lines="1" class="text_2">使用指南</text>
+        <text lines="1" class="text_2">联系我们</text>
       </view>
       <view>
-        <image src='https://wx.mygdh.top/images/guide.jpg' class="img_guide"></image>
+        <image src='https://wx.mygdh.top/images/contact.jpg' class="img_contact"></image>
       </view>
     </view>
   </view>

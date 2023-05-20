@@ -10,10 +10,8 @@ App({
   checkLogin:function(){
     var token = wx.getStorageSync("token");
     if(token == null || token == "" || token == "undefined"){
-      console.log("到这边来1");
       this.getLoginInfo()
     }else{
-      console.log("到这边来2");
       return token
     }
   },

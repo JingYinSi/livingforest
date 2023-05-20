@@ -12,12 +12,12 @@
     </view>
     <view class="list_1">
       <view class="text-group_2-0">
-        <text lines="1" class="text_2-0">今日</text>
-        <text lines="1" class="text_4-0">{{currentLesson.todayPopulations}}人</text>
+        <text lines="1" class="text_2-0">总人数</text>
+        <text lines="1" class="text_4-0">{{currentLesson.populations}}人</text>
       </view>
       <view class="text-group_2-1">
-        <text lines="1" class="text_3-1">功课合记</text>
-        <text lines="1" class="text_4-1">{{currentLesson.todayTimes/10000}}万遍</text>
+        <text lines="1" class="text_3-1">累计总数</text>
+        <text lines="1" class="text_4-1">{{currentLesson.times/10000}}万遍</text>
       </view>
     </view>
     <view class="box_4"></view>

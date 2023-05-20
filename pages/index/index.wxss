@@ -69,6 +69,13 @@
   flex-direction: column;
   padding: 10rpx 20rpx 10rpx 20rpx;
 }
+.text-wrapper_name {
+  background-color: rgba(169,135,81,1.000000);
+  border-radius: 15rpx;
+  display: flex;
+  flex-direction: column;
+  padding: 5rpx 5rpx 5rpx 5rpx;
+}
 .text_4 {
   overflow-wrap: break-word;
   color: rgba(235,223,203,1);
@@ -92,7 +99,7 @@
   flex-direction: row;
   display: flex;
   justify-content: space-between;
-  margin: 36rpx 10rpx 0 52rpx;
+  margin: 36rpx 10rpx 0 35rpx;
 }
 .text-wrapper_2 {
   padding-bottom: 36rpx;
@@ -102,7 +109,6 @@
 }
 .text_9 {
   width: 40rpx;
-  height: 350rpx;
   overflow-wrap: break-word;
   color: rgba(0,0,0,1);
   font-size: 40rpx;
@@ -223,10 +229,7 @@
   margin: -200rpx 0 18rpx 0;
 }
 .text-wrapper_3 {
-  background-size: 100rpx 158rpx;
-  display: flex;
-  flex-direction: column;
-  margin: 0 10rpx 0 0rpx;
+  width: 0rpx;
   position: absolute;
 }
 .index_desc_img{
@@ -495,7 +498,7 @@
   font-family: PingFangSC-Regular;
   font-weight: normal;
   text-align: justify;
-  line-height: 40rpx;
+  line-height: 50rpx;
   margin: 10rpx 6rpx 0 0;
 }
 .text_11_desc {
@@ -520,4 +523,8 @@
   text-align: justify;
   line-height: 40rpx;
   margin: 10rpx 6rpx 0 0;
+}
+
+.image_incantation{
+  width: 550rpx;
 }

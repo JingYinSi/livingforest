@@ -22,7 +22,9 @@
   </view>
   <view class="section_4">
     <view class="text-wrapper_2">
-      <text lines="1" class="text_9">{{currentLessonIns.lesson.name}}</text>
+      <view class="text-wrapper_name">
+        <text lines="1" class="text_9" bindtap="showIncantation">{{currentLessonIns.lesson.name}}</text>
+      </view>
       <block wx:if="{{currentLessonIns.target != 0}}">
         <text lines="1" class="paragraph_1">每\n日\n需\n完\n成\n\n\n\n\n\n\n遍</text>
         <text lines="1" class="text_10">{{currentLessonIns.target}}</text>
@@ -65,7 +67,7 @@
           <image src="../../imgs/close.png" class="apply_label_2" bindtap="closeApply"></image>
         </view>
         <view class="apply_box_5">
-          <input type="number" lines="1" class="apply_text_14" auto-focus="true" placeholder="2000" value="{{currentLessonIns.target !=0 ?currentLessonIns.target:''}}" bindinput="inputCom" maxlength="6">{{currentLessonIns.target !=0 ?currentLessonIns.target:''}}</input>
+          <input type="number" lines="1" class="apply_text_14" auto-focus="true" placeholder="2000" value="0" bindinput="inputCom" maxlength="6">0</input>
           <view class="apply_section_9"></view>
           <text lines="1" class="apply_text_15">遍</text>
         </view>
@@ -98,6 +100,19 @@
         </view>
         <text lines="1" class="text_10_desc">{{currentLessonIns.lesson.name}}</text>
         <text lines="1" class="paragraph_1_desc">{{currentLessonIns.lesson.desc}}</text>
+      </view>
+    </view>
+  </block>
+  <block wx:if="{{isShowIncantation}}">
+    <view class="box_15_desc" catchtouchmove="true" style="width: {{windowWidth}}px;height: {{windowHeight}}px;">
+      <view class="group_5_desc">
+        <view class="block_1_desc">
+          <text lines="1" class="text_9_desc"></text>
+          <image src="../../imgs/close.png" class="label_3_desc" bindtap="closeIncantation"></image>
+        </view>
+        <view>
+          <image src="{{currentLessonIns.lesson.incantation}}" class="image_incantation"></image>
+        </view>
       </view>
     </view>
   </block>

@@ -4,6 +4,7 @@ Page({
     isShowApply:false,
     isShowHui:false,
     isShowDesc:false,
+    isShowIncantation:false,
     selctIndex:0,
     currentLessonIns:{},
     applyCount:"",
@@ -220,6 +221,10 @@ Page({
               },
               data:{},
               success:function(res){
+                if("403" == res.statusCode){
+                  wx.setStorageSync("token","");
+                  return;
+                }
                 wx.request({
                   url: res.data.collection.items[0].link.href,
                   header:{
@@ -293,18 +298,33 @@ Page({
     })
   },
   closeHui: function (event) {
-    this.setData({
+    var that = this
+    that.setData({
       isShowHui:false
     })
   },
   showDesc: function (event) {
-    this.setData({
+    var that = this
+    that.setData({
       isShowDesc:true
     })
   },
   closeDesc:function (event) {
-    this.setData({
+    var that = this
+    that.setData({
       isShowDesc:false
+    })
+  },
+  showIncantation: function (event) {
+    var that = this
+    that.setData({
+      isShowIncantation:true
+    })
+  },
+  closeIncantation:function (event) {
+    var that = this
+    that.setData({
+      isShowIncantation:false
     })
   }
 });
