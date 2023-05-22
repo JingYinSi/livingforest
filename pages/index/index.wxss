@@ -75,6 +75,7 @@
   display: flex;
   flex-direction: column;
   padding: 5rpx 5rpx 5rpx 5rpx;
+  z-index: 3;
 }
 .text_4 {
   overflow-wrap: break-word;
@@ -116,7 +117,6 @@
   font-family: FZQKBYSJW--GB1-0;
   text-align: left;
   line-height: 50rpx;
-  margin-right: 7rpx;
 }
 .paragraph_1 {
   width: 40rpx;
@@ -527,4 +527,5 @@
 
 .image_incantation{
   width: 550rpx;
+  height: 531rpx;
 }
