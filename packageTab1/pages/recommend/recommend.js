@@ -39,7 +39,11 @@ Component({
                 },
                 data:{},
                 success:function(res){
-                  for(var i=0;i<res.data.collection.items.length;i++){
+                  let recommendList = res.data.collection.items;
+                  that.setData({
+                    recommendList:recommendList
+                  })
+                  for(let i=0;i<res.data.collection.items.length;i++){
                     wx.request({
                       url: res.data.collection.items[i].link.href,
                       header:{
@@ -48,7 +52,7 @@ Component({
                       data:{},
                       success:function(res){
                         let recommendList = that.data.recommendList
-                        recommendList.push(res.data.Recommend)
+                        recommendList[i] = res.data.Recommend
                         that.setData({
                           recommendList:recommendList
                         })
