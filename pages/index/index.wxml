@@ -67,7 +67,7 @@
           <image src="../../imgs/close.png" class="apply_label_2" bindtap="closeApply"></image>
         </view>
         <view class="apply_box_5">
-          <input type="number" lines="1" class="apply_text_14" auto-focus="true" placeholder="2000" value="0" bindinput="inputCom" maxlength="6">0</input>
+          <input type="number" lines="1" class="apply_text_14" auto-focus="true" placeholder="2000" value="{{currentLessonIns.target > 0 ? currentLessonIns.target : ''}}" bindinput="inputCom" maxlength="6"></input>
           <view class="apply_section_9"></view>
           <text lines="1" class="apply_text_15">遍</text>
         </view>

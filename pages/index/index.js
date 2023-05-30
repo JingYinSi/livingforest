@@ -93,7 +93,7 @@ Page({
 	},
   inputCom: function (event) {
     let applyCount = event.detail.value
-    if(!(/^(-?[1-9]\d*|-)$/.test(applyCount))){
+    if(!(/^(-?[1-9]\d*|-|0)$/.test(applyCount))){
       wx.showToast({
         title: '请输入正确的数字',
         icon: 'none'
@@ -263,7 +263,7 @@ Page({
   submitApply: function (event) {
     var that = this
     let times = that.data.applyCount;
-    if(times == "-"){
+    if(times == "-" || times == ""){
       wx.showToast({
         title: '请输入正确的数字',
         icon: 'none'
