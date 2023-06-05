@@ -2,6 +2,8 @@ const app = getApp();
 Page({
   data: {
     isShowApply:false,
+    isSubmit:false,
+    isSubmiting:false,
     isShowHui:false,
     isShowDesc:false,
     isShowIncantation:false,
@@ -252,12 +254,16 @@ Page({
   },
   showApply: function (event) {
     this.setData({
-      isShowApply:true
+      isShowApply:true,
+      isSubmit:true,
+      isSubmiting:false
     })
   },
   closeApply: function (event) {
     this.setData({
-      isShowApply:false
+      isShowApply:false,
+      isSubmit:false,
+      isSubmiting:false
     })
   },
   submitApply: function (event) {
@@ -274,6 +280,11 @@ Page({
     if(token == null || token == ""){
       return;
     }
+
+    that.setData({
+      isSubmit:false,
+      isSubmiting:true
+    })
     
     var href = event.currentTarget.dataset.href;
     wx.request({
@@ -284,16 +295,39 @@ Page({
       method:"post",
       data:{"times":that.data.applyCount},
       success:function(res){
-        that.setData({
-          isShowApply:false,
-          isShowHui:true
-        })
-        setTimeout(function(){
+        if(res.statusCode == '201'){
           that.setData({
             isShowApply:false,
-            isShowHui:false,
+            isShowHui:true
           })
-        },6000)
+          setTimeout(function(){
+            that.setData({
+              isShowApply:false,
+              isShowHui:false,
+            })
+          },6000)
+        }else{
+          wx.showToast({
+            title: '报数失败，请稍后重试',
+            icon: 'none'
+          })
+          that.setData({
+            isSubmit:true,
+            isSubmiting:false
+          })
+          return;
+        }
+      },
+      fail:function(){
+        wx.showToast({
+          title: '报数失败，请稍后重试',
+          icon: 'none'
+        })
+        that.setData({
+          isSubmit:true,
+          isSubmiting:false
+        })
+        return;
       }
     })
   },

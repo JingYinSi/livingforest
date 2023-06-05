@@ -347,6 +347,16 @@
   margin: 58rpx 4rpx 0 3rpx;
   padding: 22rpx 193rpx 21rpx 187rpx;
 }
+
+.apply_text-wrapper_5_1 {
+  background-color: rgb(122, 119, 118);
+  border-radius: 44rpx;
+  display: flex;
+  flex-direction: column;
+  margin: 58rpx 4rpx 0 3rpx;
+  padding: 22rpx 193rpx 21rpx 187rpx;
+}
+
 .apply_text_16 {
   overflow-wrap: break-word;
   color: rgba(255,255,255,1);

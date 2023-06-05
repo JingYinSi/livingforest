@@ -67,12 +67,15 @@
           <image src="../../imgs/close.png" class="apply_label_2" bindtap="closeApply"></image>
         </view>
         <view class="apply_box_5">
-          <input type="number" lines="1" class="apply_text_14" auto-focus="true" placeholder="2000" value="{{currentLessonIns.target > 0 ? currentLessonIns.target : ''}}" bindinput="inputCom" maxlength="6"></input>
+          <input type="number" lines="1" class="apply_text_14" auto-focus="true" placeholder="0" value="{{currentLessonIns.target > 0 ? currentLessonIns.target : ''}}" bindinput="inputCom" maxlength="6"></input>
           <view class="apply_section_9"></view>
           <text lines="1" class="apply_text_15">遍</text>
         </view>
-        <view class="apply_text-wrapper_5" bindtap="submitApply" data-href="{{currentLessonIns.reportHref}}">
+        <view wx:if="{{isSubmit}}" class="apply_text-wrapper_5" bindtap="submitApply" data-href="{{currentLessonIns.reportHref}}">
           <text lines="1" class="apply_text_16">确认提交</text>
+        </view>
+        <view wx:if="{{isSubmiting}}" class="apply_text-wrapper_5_1">
+          <text lines="1" class="apply_text_16">提交中</text>
         </view>
       </view>
     </view>
